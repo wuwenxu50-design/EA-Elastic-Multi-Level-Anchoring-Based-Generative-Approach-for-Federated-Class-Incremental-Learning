@@ -5,8 +5,8 @@ from utils.tiny_imagenet import TinyImageNet
 import os
 
 
-#data_dir = os.path.join(os.environ['HOME'],"../datasets")
-data_dir = os.path.join(os.environ['HOME'],"datasets")
+data_dir = os.path.join(os.environ['HOME'],"../datasets")
+#data_dir = os.path.join(os.environ['HOME'],"datasets")
 # data_dir = "../../data"
 def make_imbalanced_cifar(data, targets, imb_type="exp", imb_factor=0.01, seed=0, num_classes=100):
     """
