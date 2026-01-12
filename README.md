@@ -25,7 +25,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --group=c100t5 --exp_name=$method_b05 --da
 
 ### Ours
 ```
-CUDA_VISIBLE_DEVICES=0 python main.py --group=c100t5 --exp_name=lander_b05 --dataset cifar100 --method=ea --tasks=5 --num_users 5 --beta=0.5
+CUDA_VISIBLE_DEVICES=0 python main.py --group=c100t5 --exp_name=ea_b05 --dataset cifar100 --method=ea --tasks=5 --num_users 5 --beta=0.5
 ```
 
 ## Citation:
