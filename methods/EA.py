@@ -781,7 +781,7 @@ class EA(BaseLearner):
                 mt = synthesizer.get_teacher()
                 test_acct = self._compute_accuracy(mt, self.test_loader)
                 print("Student Test Acc: %s - %s" % (test_accs, test_acct))
-                #wandb.log({'Task_{}, Student Accuracy'.format(self._cur_task): test_accs})
+                wandb.log({'Task_{}, Student Accuracy'.format(self._cur_task): test_accs})
 
         print("For task {}, data generation completed! ".format(self._cur_task))
 
@@ -868,8 +868,8 @@ class EA(BaseLearner):
                 print("Task {}, Test_accy {:.2f} O {} N {}".format(self._cur_task, test_acc, test_old_acc,
                                                                    test_new_acc))
             print("Task {} =>  Test_accy {:.2f}".format(self._cur_task, test_acc, ))
-            #if self.wandb == 1:
-                #wandb.log({'Task_{}, accuracy'.format(self._cur_task): test_acc})
+            if self.wandb == 1:
+                wandb.log({'Task_{}, accuracy'.format(self._cur_task): test_acc})
         else:
             self._fl_train(train_dataset, self.test_loader)
         if self._cur_task + 1 != self.tasks:
@@ -981,8 +981,8 @@ class EA(BaseLearner):
                 info = ("Task {}, Epoch {}/{} =>  Test_accy {:.2f}".format(
                     self._cur_task, com + 1, self.args["com_round"], test_acc, ))
                 prog_bar.set_description(info)
-                #if self.wandb == 1:
-                    #wandb.log({'Task_{}, accuracy'.format(self._cur_task): test_acc})
+                if self.wandb == 1:
+                    wandb.log({'Task_{}, accuracy'.format(self._cur_task): test_acc})
         self._network.load_state_dict(self.best_model)  # Best model using the lowest training loss
         del self.best_model
         torch.cuda.empty_cache()
