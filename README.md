@@ -29,13 +29,12 @@ CUDA_VISIBLE_DEVICES=0 python main.py --group=c100t5 --exp_name=$method_b05 --da
 CUDA_VISIBLE_DEVICES=0 python main.py --group=c100t5 --exp_name=ea_b05 --dataset cifar100 --method=ea --tasks=5 --num_users 5 --beta=0.5
 ```
 
-## Citation:
+## References:
   ```
-@inproceedings{lander,
-  title={Text-enhanced data-free approach for federated class-incremental learning},
-  author={Tran, Minh-Tuan and Le, Trung and Le, Xuan-May and Harandi, Mehrtash and Phung, Dinh},
-  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  pages={23870--23880},
-  year={2024}
-}
+[1]Zhang J, Chen C, Zhuang W, et al. Target: Federated class-continual learning via exemplar-free
+distillation[C]//Proceedings of the IEEE/CVF International Conference on Computer Vision. 2023:
+4782-4793.
+[2]Tran M T, Le T, Le X M, et al. Text-enhanced data-free approach for federated class-incremental
+learning[C]//Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition.
+2024: 23870-23880.
   ```
