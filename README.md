@@ -2,8 +2,9 @@
 
 # Method
 The EA is a data-free generative method for federated class-incremental learning that aims to curb catastrophic forgetting when new classes arrive over time. It introduces a class-adaptive elastic radius learned from local embedding statistics so each class anchor covers an appropriate high-confidence region under client heterogeneity. It also uses a multi-level anchoring scheme where second-level anchors capture intra-class sub-distributions and then modulate first-level semantic anchors through a FiLM-based generator to produce more representative and diverse synthetic samples. Across CIFAR-100, Stanford Dogs, Tiny-ImageNet, and ImageNet, EA consistently improves average accuracy and reduces forgetting under non-IID splits, with the strongest gains reported on CIFAR-100. 
-
-
+<p align="center">
+  <img src="imgs/General Architecture of EA.png" alt="EA framework" width="700">
+</p>
 
 # Reproducing
 
