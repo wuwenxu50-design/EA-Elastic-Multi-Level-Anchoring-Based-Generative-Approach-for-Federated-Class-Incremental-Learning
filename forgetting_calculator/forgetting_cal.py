@@ -9,7 +9,6 @@ remove_key = ["total", "old", "new"]
 list_dict = []
 with open(file_path, 'r', encoding="utf8") as file:
     # Iterate through the file line by line
-    line: str
     for line in file:
         if line.startswith("CNN: "):
             txt = txt + line.replace("CNN: ", "")
