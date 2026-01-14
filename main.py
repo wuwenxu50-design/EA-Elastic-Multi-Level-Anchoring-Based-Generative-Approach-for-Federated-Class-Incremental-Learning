@@ -1,6 +1,5 @@
 import argparse
-import os
-#import wandb, os
+import wandb, os
 from utils.data_manager import DataManager, setup_seed
 from utils.toolkit import count_parameters
 from methods.finetune import Finetune
@@ -169,9 +168,9 @@ if __name__ == '__main__':
         os.makedirs(dir)
     args.save_dir = os.path.join(dir, args.group + "_" + args.exp_name + "" + args.spec)
 
-    #if args.wandb == 1:
-        #wandb.init(config=args, project=args.project, group=args.group, name=args.exp_name)
-        #wandb.run.log_code(".")
+    if args.wandb == 1:
+        wandb.init(config=args, project=args.project, group=args.group, name=args.exp_name)
+        wandb.run.log_code(".")
     project_root = os.path.dirname(os.path.abspath(__file__))
     log_dir = os.path.join(project_root, "forgetting_calculator", "log")
     os.makedirs(log_dir, exist_ok=True)
